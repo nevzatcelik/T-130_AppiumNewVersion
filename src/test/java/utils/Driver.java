@@ -35,15 +35,15 @@ public class Driver {
             options
 
 
-                 //   .setAppPackage("com.ailebutcem")
-                  //  .setAppActivity("com.ailebutcem.MainActivity")
-                    .setApp("C:\\Users\\ahmet\\IdeaProjects\\Appium_T130_NewVersion\\Apps\\Aile Bütçem_1.07_apkcombo.com.apk")
-                    .setUdid("emulator-5556") // terminale "adb devices" yazarak cihazlarimizin tc kimlik nosuna ulasiriz kopyalayarak
+                    .setAppPackage("com.tmob.teknosa")
+                    .setAppActivity("com.tmob.teknosa.MainActivity")
+                  //  .setApp("C:\\Users\\ahmet\\IdeaProjects\\Appium_T130_NewVersion\\Apps\\Teknosa – Alışveriş, Teknoloji_7.1.4_Apkpure.apk")
+                    .setUdid("emulator-5554") // terminale "adb devices" yazarak cihazlarimizin tc kimlik nosuna ulasiriz kopyalayarak
                                               // hangi cihaz uzerinde calismak istiyorsak onun udid sini burada gireriz
                     .setSkipUnlock(true)     // eger cihazinin ekran kilidi otomatik olarak eger kapaliysa ve acilsin istiyorsan true
                    // .setLanguage("En");   // uygulamanin dili
-                    .setAutoGrantPermissions(true);// kullanici tarafindan verilmesi gereken izileri KABUL eder
-                  //  .setNoReset(false) //
+                    .setAutoGrantPermissions(true)// kullanici tarafindan verilmesi gereken izileri KABUL eder
+                    .setNoReset(false); //
                    // .setFullReset(false);
                    // .withBrowserName("chrome")
                    // .setChromedriverExecutable("")
