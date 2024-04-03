@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/mobileTest",
         glue = "stepdefinitions",
         tags = "@teknosa",
-        dryRun =true
+        dryRun =false
         /* eger dry run degerimiz true ise bu adim bize features bulanan tag ait olan kisimdaki eksik adimlari yani tanimlanmayan
         adimlari bize soyler. Eger adimlar tanimlanmissa tekrar calistirildigin testimiz passed olur ama bu adimlarda eksik adim olmadigini
         gosterir yani aslinda testimizin passed oldugun gostermez
