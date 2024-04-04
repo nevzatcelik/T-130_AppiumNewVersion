@@ -22,8 +22,23 @@ public class TeknosaPage {
     @AndroidFindBy(xpath = "//*[@bounds='[75,686][114,725]']")
     public WebElement kutucuk;
 
-    @AndroidFindBy(xpath = "(//*[@index='7'])[2]")
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.TextView'])[9]")
     public WebElement birinciUrunFiyati;
-    @AndroidFindBy(xpath = "//*[@index='8']")
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.TextView'])[13]")
     public WebElement ikinciUrunFiyati;
+
+    @AndroidFindBy(xpath = "//*[@bounds='[27,762][514,1276]']")
+    public WebElement enUcuzSamsung;
+
+    @AndroidFindBy(xpath = "//*[@text='Sepete Ekle']")
+    public WebElement sepeteEkle;
+
+    @AndroidFindBy(xpath = "//*[@text='Sepetime Git']")
+    public WebElement sepetimeGit;
+
+    @AndroidFindBy(xpath = "//*[@text='+']")
+    public WebElement artiButonu;
+
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.TextView'])[7]")
+    public WebElement urunFiyati;
 }
