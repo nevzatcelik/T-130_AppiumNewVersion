@@ -41,7 +41,7 @@ public class teknosaStep {
     @Given("marka bolumunden bir cihaz {string} filtrelemesi yapilir")
     public void marka_bolumunden_bir_cihaz_filtrelemesi_yapilir(String cihazIsmi) {
      page.markaKutusu.sendKeys(cihazIsmi);
-     ReusableMethods.scrollWithUiScrollableAndClick("TCL");
+     page.kutucuk.click();
      page.sonculariGoserButonu.click();
 
     }
@@ -51,6 +51,17 @@ public class teknosaStep {
     }
     @Given("fiyatlarin azalan duzende oldugu test edilir")
     public void fiyatlarin_azalan_duzende_oldugu_test_edilir() {
+        ReusableMethods.wait(3);
+        ReusableMethods.ekranKaydirmaMethodu(530,2032,750,530,667);
+        String birinciUrunFiyatiText=page.birinciUrunFiyati.getText(); // 4.529,00 TL
+        String ikinciUrunFiyatiText= page.ikinciUrunFiyati.getText();
+
+        birinciUrunFiyatiText=birinciUrunFiyatiText.replaceAll("\\D","");
+        System.out.println(birinciUrunFiyatiText);
+        ikinciUrunFiyatiText=ikinciUrunFiyatiText.replaceAll("\\D","");
+        System.out.println(ikinciUrunFiyatiText);
+
+
 
     }
 

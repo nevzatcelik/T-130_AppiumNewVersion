@@ -18,4 +18,12 @@ public class TeknosaPage {
 
     @AndroidFindBy(xpath = "//*[@text='Sonuçları Göster']")
     public WebElement sonculariGoserButonu;
+
+    @AndroidFindBy(xpath = "//*[@bounds='[75,686][114,725]']")
+    public WebElement kutucuk;
+
+    @AndroidFindBy(xpath = "(//*[@index='7'])[2]")
+    public WebElement birinciUrunFiyati;
+    @AndroidFindBy(xpath = "//*[@index='8']")
+    public WebElement ikinciUrunFiyati;
 }
