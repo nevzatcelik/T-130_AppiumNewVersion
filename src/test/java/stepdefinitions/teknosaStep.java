@@ -74,19 +74,22 @@ public class teknosaStep {
     @Given("sepetime git bolumune tiklanir")
     public void sepetime_git_bolumune_tiklanir() {
 page.sepetimeGit.click();
+ReusableMethods.wait(2);
     }
     @Given("urunun sayisi arttirildiginda fiyatinin arttirildigi dogrulanir")
     public void urunun_sayisi_arttirildiginda_fiyatinin_arttirildigi_dogrulanir() {
       String urununILKfiyati= page.urunFiyati.getText();
       urununILKfiyati=urununILKfiyati.replaceAll("\\D","");
-        System.out.println(urununILKfiyati); // 569900
+        urununILKfiyati=urununILKfiyati.substring(0,urununILKfiyati.length()-2);
+        System.out.println(urununILKfiyati); // 5699
       page.artiButonu.click();
-
+      ReusableMethods.wait(4);
       String urununIKINCIfiyati=page.urunFiyati.getText();
       urununIKINCIfiyati=urununIKINCIfiyati.replaceAll("\\D","");
-        System.out.println(urununIKINCIfiyati); // 1139800
+      urununIKINCIfiyati=urununIKINCIfiyati.substring(0,urununIKINCIfiyati.length()-2);
+        System.out.println(urununIKINCIfiyati); // 11398
 
-        Assert.assertEquals(1139800,Integer.parseInt(urununILKfiyati)*2);
+        Assert.assertEquals(Integer.parseInt(urununIKINCIfiyati),Integer.parseInt(urununILKfiyati)*2);
 
     }
 
