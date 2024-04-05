@@ -7,6 +7,8 @@ import pages.TeknosaPage;
 import utils.Driver;
 import utils.ReusableMethods;
 
+import java.io.IOException;
+
 public class teknosaStep {
         AndroidDriver driver= Driver.getAndroidDriver();
         TeknosaPage page=new TeknosaPage();
@@ -17,6 +19,7 @@ public class teknosaStep {
     @Given("ilk ekran bolumunden {string} tiklanir")
     public void ılk_ekran_bolumunden_atlaya_tiklanir(String girisSecenegi) {
         ReusableMethods.scrollWithUiScrollableAndClick(girisSecenegi);
+        ReusableMethods.wait(2);
     }
     @Given("footer bolumunden {string} bolumune tiklanir")
     public void kategoriler_bolumune_tiklanir(String footerSecenek) {
@@ -73,8 +76,8 @@ public class teknosaStep {
     }
     @Given("sepetime git bolumune tiklanir")
     public void sepetime_git_bolumune_tiklanir() {
-page.sepetimeGit.click();
-ReusableMethods.wait(2);
+    page.sepetimeGit.click();
+    ReusableMethods.wait(2);
     }
     @Given("urunun sayisi arttirildiginda fiyatinin arttirildigi dogrulanir")
     public void urunun_sayisi_arttirildiginda_fiyatinin_arttirildigi_dogrulanir() {
@@ -91,6 +94,12 @@ ReusableMethods.wait(2);
 
         Assert.assertEquals(Integer.parseInt(urununIKINCIfiyati),Integer.parseInt(urununILKfiyati)*2);
 
+    }
+
+    @Given("kullanic cekmek istedigi elementin {string} screen shoti alir")
+    public void kategori_bolumunun_screen_shoti_alinir(String elementXpath) throws IOException {
+     ReusableMethods.getScreenshot("fullScreen");
+     ReusableMethods.screenShotElement(elementXpath);
     }
 
 }

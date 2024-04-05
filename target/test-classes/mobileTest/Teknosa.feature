@@ -13,7 +13,7 @@
       * cep telefonu sayfasinda "Sırala" bolumune tiklanir
       * siralama sayfasından "Azalan Fiyat" siralamasi secilir
       * fiyatlarin azalan duzende oldugu test edilir
-    @teknosa
+
     Scenario:
 
       * Uygulama baslatilir
@@ -30,5 +30,11 @@
       * cihaz sepete eklenir
       * sepetime git bolumune tiklanir
       * urunun sayisi arttirildiginda fiyatinin arttirildigi dogrulanir
+    @teknosa
+      Scenario: Kullanici screenShot cekecegi alani belirler
+        * Uygulama baslatilir
+        * ilk ekran bolumunden "Atla" tiklanir
+        * kullanic cekmek istedigi elementin "(//*[@class='android.view.View'])[3]" screen shoti alir
+
 
 

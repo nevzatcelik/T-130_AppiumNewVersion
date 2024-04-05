@@ -11,7 +11,10 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebElement;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -92,4 +95,24 @@ public class ReusableMethods {
                 .perform();
 
     }
+
+    public static void screenShotElement(String text) throws IOException {
+        WebElement element = driver.findElement(By.xpath(text));
+        org.openqa.selenium.Point location = element.getLocation();
+        org.openqa.selenium.Dimension size = element.getSize();
+
+        // Ekran görüntüsünü alın ve belirli bölgeyi kırpın
+        File screenshot = driver.getScreenshotAs(OutputType.FILE);
+        BufferedImage fullImage = ImageIO.read(screenshot);
+        BufferedImage croppedImage = fullImage.getSubimage(location.getX(), location.getY(), size.getWidth(), size.getHeight());
+
+        // Kırpılmış görüntüyü kaydedin
+        File output = new File("kırpılmış_screenshot.png");
+        ImageIO.write(croppedImage, "png", output);
+
+        // Bağlantıyı kapat
+        driver.quit();
+    }
+
+
 }
